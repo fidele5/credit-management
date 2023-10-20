@@ -1,59 +1,46 @@
+
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+
+<html class="loading" lang="pt" data-textdirection="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-    <meta charset="utf-8">
+    <meta  charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('adminn/assets/images/favicon.png') }}">
-    <title>admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="csrf-token" content="xyiBo1teyHSSetQs0ZEMM3aCcYz5YtlRBSJ4vbGZ">
 
-    <!-- Custom CSS -->
-    <link href="{{ asset('/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/extra-libs/toastr/dist/build/toastr.min.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>Dashboard Analytics - Frest - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="images/ico/apple-icon-120.html">
+    <link rel="shortcut icon" type="image/x-icon" href="images/ico/favicon.ico">
 
-    <link href="{{ asset('/dist/css/style.min.css') }}" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
-    @switch(Route::currentRouteName())
-        @case("calendar")
-    <link href="/assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
-    <link href="/assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
-            @break
-        @case("contacts")
-    <link href="/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
-            @break
-            @case('categoryes')
+    <!-- BEGIN: Vendor CSS-->
+        <link rel="stylesheet" type="text/css" href="/vendors/css/vendors.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/charts/apexcharts.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/dragula.min.css">
+    <!-- END: Vendor CSS-->
 
-            @break
-        @default
-            
-    @endswitch
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="/css/components.css">
+    <link rel="stylesheet" type="text/css" href="/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/themes/semi-dark-layout.css">
+        <!-- END: Theme CSS-->
 
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
+    <!-- BEGIN: Page CSS-->
+        <link rel="stylesheet" type="text/css" href="/css/core/menu/menu-types/vertical-menu.css">
+        <link rel="stylesheet" type="text/css" href="/css/pages/dashboard-analytics.css">
+    <!-- END: Page CSS-->
 
-<body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
+    <!-- BEGIN: Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <!-- END: Custom CSS-->
+    </head>
+    <!-- END: Head-->
+
+    <!-- BEGIN: Body-->
+    <body class="vertical-layout vertical-menu-modern 2-columns light-layout  navbar-sticky footer-static  boxicon-layout no-card-shadow" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">

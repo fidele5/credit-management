@@ -1,62 +1,47 @@
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                All Rights Reserved by Xtreme . Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="{!! url('/assets/libs/jquery/dist/jquery.min.js') !!}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <script src="/dist/js/app.min.js"></script>
-    <script src="/dist/js/app.init.dark.js"></script>
-    <script src="/dist/js/app-style-switcher.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="/assets/extra-libs/sparkline/sparkline.js"></script>
-    <!--Wave Effects -->
-    <script src="/dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="/dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-   <script src="/dist/js/feather.min.js"></script>
-    <script src="/dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!--Morris JavaScript -->
-    <!--c3 charts -->
-    <script src="/assets/extra-libs/c3/d3.min.js"></script>
-    <script src="/assets/extra-libs/c3/c3.min.js"></script>
-    <script src="/dist/js/pages/dashboards/dashboard5.js"></script>
-    <script src="/assets/libs/moment/min/moment.min.js"></script>
-    <script src="/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="/dist/js/pages/calendar/cal-init.js"></script>
-    <script src="/dist/js/pages/contact/contact.js"></script>
-    <script src="/assets/libs/moment/moment.js" type="text/javascript"></script>
-    <script src="/assets/libs/footable/js/footable.min.js"></script>
-    <script src="/assets/extra-libs/toastr/dist/build/toastr.min.js"></script>
-    <script src="/assets/libs/block-ui/jquery.blockUI.js"></script>
-    <script src="/assets/extra-libs/block-ui/block-ui.js"></script>
-    <script src="/assets/libs/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="/assets/libs/sweetalert2/sweet-alert.init.js"></script>
-    <script src="/assets/ajax/categories.js"></script>
-    <script src="/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/dist/js/pages/datatable/datatable-basic.init.js"></script>
-    <script src="/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/dist/js/pages/datatable/datatable-advanced.init.js"></script>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+  <!-- BEGIN: Footer-->
+    <footer class="footer footer-light footer-static">
+        <p class="clearfix mb-0">
+            <span class="float-left d-inline-block">2020 &copy; PIXINVENT</span>
+            <span class="float-right d-sm-inline-block d-none">Crafted with
+                <i class="bx bxs-heart pink mx-50 font-small-3"></i>by
+                <a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a>
+            </span>
+            <button class="btn btn-primary btn-icon scroll-top" type="button">
+                <i class="bx bx-up-arrow-alt"></i>
+            </button>
+        </p>
+    </footer>
+  <!-- END: Footer-->
+
+  <!-- BEGIN: Vendor JS-->
+    <script>
+        var assetBaseUrl = "index.html";
+    </script>
+    <script src="/vendors/js/vendors.min.js"></script>
+    <script src="/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="/vendors/js/extensions/dragula.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+        <script src="/js/scripts/configs/horizontal-menu.js"></script>
+        <script src="/js/core/app-menu.js"></script>
+        <script src="/js/core/app.js"></script>
+        <script src="/js/scripts/components.js"></script>
+        <script src="/js/scripts/footer.js"></script>
+        <script src="/js/scripts/customizer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="/js/scripts/pages/dashboard-analytics.js"></script>
+    <!-- END: Page JS-->
 </body>
 </html>
