@@ -33,7 +33,7 @@
                     <td>{{ $type->amount_range_start }}</td>
                     <td>{{ $type->amount_range_end }}</td>
                     <td>{{ $type->allowed_documents }}</td>
-                    <td><a href="page-users-edit.html"><i
+                    <td><a href="{{ route('credit-type.edit', $type) }}"><i
                                 class="bx bx-edit-alt"></i></a></td>
                     </tr>
                 @endforeach
