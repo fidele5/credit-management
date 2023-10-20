@@ -9,7 +9,9 @@
 	    
   <div class="content-overlay"></div>
         <div class="content-wrapper">
-            @yield('content')
+            <div class="content-body">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>

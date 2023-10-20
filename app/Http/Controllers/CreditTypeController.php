@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CreditType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CreditTypeController extends Controller
 {
@@ -12,7 +13,8 @@ class CreditTypeController extends Controller
      */
     public function index()
     {
-        //
+        $creditType = CreditType::get();
+        return view('pages.credit-type.index')->with('types', $creditType);
     }
 
     /**
@@ -20,7 +22,7 @@ class CreditTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.credit-type.create');
     }
 
     /**
@@ -28,7 +30,11 @@ class CreditTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->except('_token'),[
+            'title' => 'required',
+            'description' => 'required',
+            'amount_range_start' => ''
+        ]);
     }
 
     /**

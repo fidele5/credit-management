@@ -12,7 +12,8 @@ class CreditController extends Controller
      */
     public function index()
     {
-        //
+        $credits = Credit::with('client')->get();
+        return view('pages.credit.index')->with('credits', $credits);
     }
 
     /**

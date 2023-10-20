@@ -20,6 +20,9 @@
         <link rel="stylesheet" type="text/css" href="/vendors/css/vendors.min.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/charts/apexcharts.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/dragula.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/datatables.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/responsive.bootstrap.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -34,6 +37,11 @@
     <!-- BEGIN: Page CSS-->
         <link rel="stylesheet" type="text/css" href="/css/core/menu/menu-types/vertical-menu.css">
         <link rel="stylesheet" type="text/css" href="/css/pages/dashboard-analytics.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="/css/pages/app-invoice.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
