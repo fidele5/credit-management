@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('agent_positions', function (Blueprint $table) {
             $table->id();
-            $table->string('desctiption');
+            $table->string('description');
             $table->timestamps();
             $table->softDeletes();
         });
