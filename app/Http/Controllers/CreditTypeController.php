@@ -32,9 +32,25 @@ class CreditTypeController extends Controller
     {
         $validator = Validator::make($request->except('_token'),[
             'title' => 'required',
-            'description' => 'required',
-            'amount_range_start' => ''
+            'description' => 'required|numeric',
+            'amount_range_start' => 'required|numeric',
+            'amount_range_end' => 'required|numeric',
+            'allowed_documents' => 'required'
         ]);
+
+        if(!$validator->fails()){
+            $creditType = new CreditType();
+            $creditType->title = $request->title;
+            $creditType->description = $request->description;
+            $creditType->amount_range_start = $request->amount_range_start;
+            $creditType->amount_range_end = $request->amount_range_end;
+            $creditType->allowed_documents = $request->allowed_documents;
+            $creditType->save();  
+
+            return back();
+        }
+
+        return back()->with('errors', $validator->errors());
     }
 
     /**
