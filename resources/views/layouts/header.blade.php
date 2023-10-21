@@ -23,6 +23,8 @@
         <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/datatables.min.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/responsive.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/sweetalert2.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/toastr.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -42,6 +44,10 @@
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="/css/pages/app-invoice.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/datatables.min.css">
+    <!-- END: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/pages/page-users.css">
+    <link rel="stylesheet" type="text/css" href="/css/plugins/forms/validation/form-validation.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
