@@ -21,7 +21,7 @@
                                                 <label for="description">Client</label>
                                                 <select class="form-control select2" name="client_id">
                                                     @foreach ($clients as $client)
-                                                        <option value="{{ $client->id }}" selected="{{ ($credit->client_id === $client->id) ? 'selected' : '' }}">{{ $client->person->first_name }} {{ $client->person->last_name }}</option>
+                                                        <option value="{{ $client->id }}" {{ ($credit->client_id === $client->id) ? 'selected' : '' }}>{{ $client->person->first_name }} {{ $client->person->last_name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -32,7 +32,7 @@
                                                 <label for="description">Credit type</label>
                                                 <select class="form-control" name="credit_type_id">
                                                     @foreach ($creditTypes as $creditType)
-                                                        <option value="{{ $creditType->id }}" selected="{{ ($credit->credit_type_id === $creditType->id) ? 'selected' : '' }}">{{ $creditType->title }}</option>
+                                                        <option value="{{ $creditType->id }}" {{ ($credit->credit_type_id === $creditType->id) ? 'selected' : '' }} >{{ $creditType->title }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
