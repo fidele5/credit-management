@@ -39,6 +39,12 @@
     <script src="/vendors/js/extensions/sweetalert2.all.min.js"></script>
     <script src="/vendors/js/extensions/toastr.min.js"></script>
     <script src="/vendors/js/extensions/polyfill.min.js"></script>
+    <script src="/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="/vendors/js/pickers/daterange/moment.min.js"></script>
+    <script src="/vendors/js/pickers/daterange/daterangepicker.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -55,6 +61,7 @@
     <script src="/js/scripts/pages/app-invoice.js"></script>
     <script src="/js/scripts/datatables/datatable.js"></script>
     <script src="/js/scripts/pages/page-users.js"></script>
+    <script src="/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>  
     <!-- END: Page JS-->
 
     <script src="/js/ajax/form.js"></script>
