@@ -11,7 +11,7 @@
         </div>
         <div class="card-content">
           <div class="card-body">
-            <form class="form form-vertical" method="post" action="{{ route('credit-type.update', $creditType) }}">
+            <form class="form form-vertical" method="post" action="{{ route('credit-type.update', $creditType) }}" novalidate>
                 @csrf
                 @method('PATCH')
               <div class="form-body">
@@ -19,35 +19,36 @@
                   <div class="col-12">
                     <div class="form-group">
                       <label for="first-name-vertical">Title</label>
-                      <input type="text" id="first-name-vertical" class="form-control" name="title" value="{{ $creditType->title }}"
+                      <input type="text" id="first-name-vertical" class="form-control champ" name="title" value="{{ $creditType->title }}"
                         placeholder="Title">
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <input type="text" id="description" class="form-control" name="description"
-                        placeholder="Description" value="{{ $creditType->description }}">
+                      <input type="text" id="description" class="form-control champ" name="description" value="{{ $creditType->description }}"
+                        placeholder="Description">
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                       <label for="contact-info-vertical">Amount range start</label>
-                      <input type="number" id="contact-info-vertical" class="form-control" name="amount_range_start" value="{{ $creditType->amount_range_start }}"
+                      <input type="number" id="contact-info-vertical" class="form-control champ" name="amount_range_start" value="{{ $creditType->amount_range_start }}"
                         placeholder="Amount range start">
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                       <label for="contact-info-vertical">Amount range end</label>
-                      <input type="number" id="contact-info-vertical" class="form-control" name="amount_range_end" value="{{ $creditType->amount_range_end }}"
+                      <input type="number" id="contact-info-vertical" class="form-control champ" name="amount_range_end" value="{{ $creditType->amount_range_end }}"
                         placeholder="Amount range end">
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-group">
                         <fieldset class="form-label-group">
-                              <textarea class="form-control" id="label-textarea" rows="3" name="allowed_documents" placeholder="Allowed documents">{{ $creditType->allowed_documents }}</textarea>
+                              <textarea class="form-control champ" id="label-textarea" rows="3" name="allowed_documents" placeholder="Allowed documents" required
+                              data-validation-required-message="Veuillez completer les documents requis">{{ $creditType->allowed_documents }}</textarea>
                               <label for="label-textarea">Allowed documents</label>
                           </fieldset>
                     </div>
