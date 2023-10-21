@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Agent;
 use App\Models\Person;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -43,23 +44,26 @@ class AgentController extends Controller
             'address' => 'required'
         ]);
 
-        if (!$validation->fails()){
+        if (!$validation->fails())
+        {
+            $person = new Person();
+            $person->first_name = $request->first_name;
+            $person->middle_name = $request->middle_name;
+            $person->last_name = $request->last_name;
+            $person->date_of_birth = Carbon::parse($request->date_of_birth)->toDateString();
+            $person->place_of_birth = $request->place_of_birth;
+            $person->email = $request->email;
+            $person->phone_number = $request->phone_number;
+            $person->address = $request->address;
+            $person->save();
 
-            $agent = new Agent() ;
-            $agent->title = $request->title;
-
-            $agent->person()->create([
-                'first_name' => $request->first_name,
-                'middle_name' => $request->middle_name,
-                'last_name' => $request->last_name,
-                'date_of_birth' => $request->date_of_birth,
-                'place_of_birth' => $request->place_of_birth,
-                'email' =>  $request->email,
-                'phone_number' => $request->phone_number,
-                'address' => $request->address
-            ]);
-
-            $agent->save();
+            if($person)
+            {
+                $agent = new Agent();
+                $agent->person_id = $person->id;
+                $agent->title = $request->title;
+                $agent->save();
+            }
 
             return response()->json('success');
         }
