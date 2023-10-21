@@ -310,15 +310,17 @@ $(document).ready(function() {
                             padding: '2em'
                         });
 
-                        location.href = "/admin/" + response.back;
+                        location.href = "/" + response.back;
                     }
 
                 },
 
                 error: function(data) {
+                    console.log(data);
+                    $('button[type=submit]').removeAttr('disabled').html('Submit');
 
                     $.each(data.responseJSON.errors, function(key, value) {
-
+                        console.log('here', key, value)
                         var input = 'form .champ[name=' + key + ']';
 
                         $(input).addClass('is-invalid');
