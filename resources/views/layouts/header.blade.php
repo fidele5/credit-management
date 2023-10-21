@@ -25,6 +25,8 @@
         <link rel="stylesheet" type="text/css" href="/vendors/css/tables/datatable/responsive.bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/sweetalert2.min.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/toastr.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/pickers/pickadate/pickadate.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/pickers/daterange/daterangepicker.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
