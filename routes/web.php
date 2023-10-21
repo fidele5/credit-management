@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\AgentPositionController;
 use App\Http\Controllers\CreditController;
 use App\Http\Controllers\CreditTypeController;
@@ -27,4 +28,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('credit', CreditController::class);
     Route::resource('credit-type', CreditTypeController::class);
     Route::resource('agent-position', AgentPositionController::class);
+    Route::resource('agent', AgentController::class);
 });

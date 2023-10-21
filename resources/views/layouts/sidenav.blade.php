@@ -40,7 +40,12 @@
           <span class="menu-title">Credits type</span>
         </a>
       </li>
-        <li class="navigation-header"><span>Apps</span></li>
+        <li class="nav-item ">
+            <a href="{{ route('agent.index') }}" >
+                <i class="bx bx-user"></i>
+                <span class="menu-title">Agent</span>
+            </a>
+        </li>
         <li class="nav-item ">
             <a href="{{ route('agent-position.index') }}" >
                 <i class="bx bx-envelope"></i>
