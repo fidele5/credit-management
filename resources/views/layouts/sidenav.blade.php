@@ -24,7 +24,7 @@
           <span class="menu-title">painel de controle</span>
           <span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span>
         </a>
-                      
+
       </li>
       <li class="navigation-header"><span>Apps</span></li>
       <li class="nav-item ">
@@ -40,22 +40,29 @@
           <span class="menu-title">Credits type</span>
         </a>
       </li>
-                                    
+        <li class="navigation-header"><span>Apps</span></li>
+        <li class="nav-item ">
+            <a href="{{ route('agent-position.index') }}" >
+                <i class="bx bx-envelope"></i>
+                <span class="menu-title">Agent Position</span>
+            </a>
+        </li>
+
       <li class="nav-item ">
         <a href="app-kanban.html" >
           <i class="bx bx-grid-alt"></i>
           <span class="menu-title">Kanban</span>
         </a>
       </li>
-                                    
-                                
+
+
       <li class="nav-item ">
         <a href="# " >
           <i class="bx bx-unlink"></i>
           <span class="menu-title">Menu desativado</span>
         </a>
       </li>
-                                        
+
       <li class="navigation-header"><span>Support</span></li>
       <li class="nav-item ">
         <a href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/documentation" target=_blank>

@@ -51,18 +51,8 @@
                               <label for="label-textarea">Allowed documents</label>
                           </fieldset>
                     </div>
-                  </div>
-                  <div class="col-12 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
-                    <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Reset</button>
-                  </div>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 @endsection
