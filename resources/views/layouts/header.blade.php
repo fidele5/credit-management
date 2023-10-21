@@ -27,6 +27,7 @@
         <link rel="stylesheet" type="text/css" href="/vendors/css/extensions/toastr.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/pickers/pickadate/pickadate.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/pickers/daterange/daterangepicker.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/forms/select/select2.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->

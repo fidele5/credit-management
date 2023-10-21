@@ -4,78 +4,103 @@
     <!-- Basic Vertical form layout section start -->
     <section id="basic-vertical-layouts">
         <div class="row match-height justify-content-center">
-            <div class="col-md-6 col-12">
+            <div class="col-md-9 col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Create New Agent</h4>
+                        <h4 class="card-title">New Agent</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" method="post" action="{{ route('agent.store') }}">
+                            <form class="form form-vertical" method="post" action="{{ route('client.store') }}" novalidate>
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="title">Title</label>
-                                                <input type="text" id="title" class="form-control" name="title"
-                                                       placeholder="Title">
+                                        <div class="row col-12 pr-0">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="first-name-vertical">First Name</label>
+                                                    <input type="text" id="first-name-vertical"
+                                                        class="form-control champ" name="first_name" required
+                                                        data-validation-required-message="This First Name field is required"
+                                                        placeholder="Title">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="last_name">Last Name</label>
+                                                    <input type="text" id="last_name" class="form-control champ"
+                                                        name="last_name" placeholder="Last name">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="first-name">First Name</label>
-                                                <input type="text" id="first-name" class="form-control" name="first_name"
-                                                       placeholder="First Name">
+                                        <div class="row col-12 pr-0">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="phone_number">Phone number</label>
+                                                    <input type="tel" id="phone number" class="form-control"
+                                                        name="phone_number" placeholder="Phone number">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="contact-info-vertical">Email</label>
+                                                    <input type="email" id="contact-info-vertical" class="form-control"
+                                                        name="email" placeholder="Email">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="middle-name">Middle Name</label>
-                                                <input type="text" id="middle-name" class="form-control" name="middle_name"
-                                                       placeholder="Middle Name">
+
+                                        <div class="row col-12 pr-0">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="date_of_birth">Date of birth</label>
+                                                    <fieldset class="form-group position-relative has-icon-left">
+                                                        <input type="text" class="form-control pickadate-months-year"
+                                                            name="date_of_birth" placeholder="Select Date">
+                                                        <div class="form-control-position">
+                                                            <i class='bx bx-calendar'></i>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="contact-info-vertical">Place of birth</label>
+                                                    <input type="text" id="contact-info-vertical" class="form-control"
+                                                        name="place_of_birth" placeholder="Place of birth">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="last-name">Last Name</label>
-                                                <input type="text" id="last-name" class="form-control" name="last_name"
-                                                       placeholder="Last Name">
+
+                                        <div class="row col-12 pr-0">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="other_id">Title</label>
+                                                    <input type="email" id="contact-info-vertical" class="form-control"
+                                                        name="other_id" placeholder="Title">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="other_id">Agent posision</label>
+                                                    <select class="select2 form-control" id="agent_position_id" name="agent_position_id">
+                                                    <option value="square">Square</option>
+                                                    <option value="rombo">Rombo</option>
+                                                    <option value="romboid">Romboid</option>
+                                                    <option value="trapeze">Trapeze</option>
+                                                    <option value="polygon">Polygon</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
+
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="date-of-birth">Date Of Birth</label>
-                                                <input type="date" id="date-of-birth" class="form-control" name="date_of_birth"
-                                                       placeholder="Date Of Birth">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="place-of-birth">Place Of Birth</label>
-                                                <input type="text" id="place-of-birth" class="form-control" name="place_of_birth"
-                                                       placeholder="Place Of Birth">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input type="email" id="email" class="form-control" name="email"
-                                                       placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="phone-number">Phone Number</label>
-                                                <input type="number" id="phone-number" class="form-control" name="phone_number"
-                                                       placeholder="Phone Number">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="address">Address</label>
-                                                <input type="text" id="address" class="form-control" name="address"
-                                                       placeholder="Address">
+                                                <fieldset class="form-label-group">
+                                                    <textarea class="form-control champ" id="address" rows="3" name="address" placeholder="Address"></textarea>
+                                                    <label for="address">Address</label>
+                                                </fieldset>
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">
