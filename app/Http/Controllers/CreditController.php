@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\Credit;
+use App\Models\CreditType;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class CreditController extends Controller
 {
@@ -21,7 +25,10 @@ class CreditController extends Controller
      */
     public function create()
     {
-        //
+        $clients = Client::with('person')->get();
+        $creditTypes = CreditType::get();
+
+        return view('pages.credit.create')->with(compact('clients', 'creditTypes'));
     }
 
     /**
@@ -29,7 +36,48 @@ class CreditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->except('_token'),[
+            'client_id' => 'required|numeric',
+            'credit_type_id' => 'required|numeric',
+            'amount' => 'required|numeric',
+            'duration' => 'required|numeric',
+            'duration_unit' => 'required'
+        ]);
+
+        if(!$validator->fails()){
+            $credit = new Credit();
+            $credit->client_id = $request->client_id;
+            $credit->credit_type_id = $request->credit_type_id;
+            $credit->amount = $request->amount;
+
+            $duration = 0;
+
+            switch ($request->duration_unit) {
+                case 'month':
+                    $duration  = $request->duration * 28;
+                    break;
+                case 'year': 
+                    $duration = $request->duration * 12 * 28;
+                    break;
+                
+                default:
+                    $duration = $request->duration;
+                    break;
+            }
+
+            $credit->duration = $duration;
+            $credit->status = 0;
+            $credit->save();
+
+            return response()->json([
+                'status' => 'success',
+                'back' => 'credit'
+            ]);
+        }
+
+        return response()->json([
+            'errors' => $validator->errors()
+        ], Response::HTTP_FORBIDDEN);
     }
 
     /**
@@ -45,7 +93,10 @@ class CreditController extends Controller
      */
     public function edit(Credit $credit)
     {
-        //
+        $clients = Client::with('person')->get();
+        $creditTypes = CreditType::get();
+
+        return view('pages.credit.edit')->with(compact('credit', 'clients', 'creditTypes'));
     }
 
     /**
@@ -53,7 +104,47 @@ class CreditController extends Controller
      */
     public function update(Request $request, Credit $credit)
     {
-        //
+        $validator = Validator::make($request->except('_token'),[
+            'client_id' => 'required|numeric',
+            'credit_type_id' => 'required|numeric',
+            'amount' => 'required|numeric',
+            'duration' => 'required|numeric',
+            'duration_unit' => 'required'
+        ]);
+
+        if(!$validator->fails()){
+            $credit->client_id = $request->client_id;
+            $credit->credit_type_id = $request->credit_type_id;
+            $credit->amount = $request->amount;
+
+            $duration = 0;
+
+            switch ($request->duration_unit) {
+                case 'month':
+                    $duration  = $request->duration * 28;
+                    break;
+                case 'years': 
+                    $duration = $request->duration * 12 * 28;
+                    break;
+                
+                default:
+                    $duration = $request->duration;
+                    break;
+            }
+
+            $credit->duration = $duration;
+            $credit->status = 0;
+            $credit->save();
+
+            return response()->json([
+                'status' => 'success',
+                'back' => 'credit'
+            ]);
+        }
+
+        return response()->json([
+            'errors' => $validator->errors()
+        ], Response::HTTP_FORBIDDEN);
     }
 
     /**
@@ -61,6 +152,9 @@ class CreditController extends Controller
      */
     public function destroy(Credit $credit)
     {
-        //
+        $credit->delete();
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }

@@ -17,11 +17,11 @@ return new class extends Migration
             $table->unsignedBigInteger('credit_type_id');
             $table->double('amount');
             $table->integer('duration');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->boolean('status');
-            $table->unsignedBigInteger('accepted_by');
-            $table->dateTime('accepted_at');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->boolean('status')->default(0);
+            $table->unsignedBigInteger('accepted_by')->nullable();
+            $table->dateTime('accepted_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
