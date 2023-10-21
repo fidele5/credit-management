@@ -49,5 +49,7 @@
     <script src="/js/scripts/pages/dashboard-analytics.js"></script>
     <script src="/js/scripts/pages/app-invoice.js"></script>
     <!-- END: Page JS-->
+
+    <script src="/js/ajax/form.js"></script>
 </body>
 </html>
