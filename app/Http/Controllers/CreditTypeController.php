@@ -32,7 +32,7 @@ class CreditTypeController extends Controller
     {
         $validator = Validator::make($request->except('_token'),[
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'required|numeric',
             'amount_range_start' => 'required|numeric',
             'amount_range_end' => 'required|numeric',
             'allowed_documents' => 'required'
@@ -47,15 +47,10 @@ class CreditTypeController extends Controller
             $creditType->allowed_documents = $request->allowed_documents;
             $creditType->save();  
 
-            return response()->json([
-                'status' => 'success',
-                'back' => 'credit-type'
-            ]);
+            return back();
         }
 
-        return response()->json([
-            'errors' => $validator->errors()
-        ], 403);
+        return back()->with('errors', $validator->errors());
     }
 
     /**
@@ -71,7 +66,7 @@ class CreditTypeController extends Controller
      */
     public function edit(CreditType $creditType)
     {
-        return view('pages.credit-type.edit')->with('creditType', $creditType);
+        return view('pages.credit-type.edit')->with(compact('creditType'));
     }
 
     /**
@@ -93,17 +88,12 @@ class CreditTypeController extends Controller
             $creditType->amount_range_start = $request->amount_range_start;
             $creditType->amount_range_end = $request->amount_range_end;
             $creditType->allowed_documents = $request->allowed_documents;
-            $creditType->save();  
+            $creditType->save(); 
 
-            return response()->json([
-                'status' => 'success',
-                'back' => '../credit-type'
-            ]);
+            return back();
         }
 
-        return response()->json([
-            'errors' => $validator->errors()
-        ], 403);
+        return back()->with('errors', $validator->errors());
     }
 
     /**
