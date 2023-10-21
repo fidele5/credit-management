@@ -23,12 +23,14 @@
                     <th>Amount range start</th>
                     <th>Amount range end</th>
                     <th>Allowed documents</th>
+                    <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($types as $type)
                     <tr>
                     <td>{{ $type->id }}</td>
+                    <td>{{ $type->title }}</td>
                     <td>{{ $type->description }}</td>
                     <td>{{ $type->amount_range_start }}</td>
                     <td>{{ $type->amount_range_end }}</td>

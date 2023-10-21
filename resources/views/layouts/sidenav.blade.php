@@ -26,7 +26,7 @@
         </a>
 
       </li>
-      <li class="navigation-header"><span>Apps</span></li>
+      <li class="navigation-header"><span>Credit</span></li>
       <li class="nav-item ">
         <a href="{{ route('credit.index') }}" >
           <i class="bx bx-envelope"></i>
@@ -36,10 +36,21 @@
 
       <li>
       <a href="{{ route('credit-type.index') }}" >
-          <i class="bx bx-envelope"></i>
+          <i class="bx bxs-spreadsheet"></i>
           <span class="menu-title">Credits type</span>
         </a>
       </li>
+
+      <li class="navigation-header"><span>Client</span></li>
+      <li class="nav-item ">
+        <a href="{{ route('client.index') }}" >
+          <i class="bx bxs-user-rectangle"></i>
+          <span class="menu-title">Client</span>
+        </a>
+      </li>
+
+      <li class="navigation-header"><span>Agent</span></li>
+      <li class="nav-item ">
         <li class="nav-item ">
             <a href="{{ route('agent.index') }}" >
                 <i class="bx bx-user"></i>
@@ -48,10 +59,10 @@
         </li>
         <li class="nav-item ">
             <a href="{{ route('agent-position.index') }}" >
-                <i class="bx bx-envelope"></i>
+                <i class="bx bxs-user-badge"></i>
                 <span class="menu-title">Agent Position</span>
             </a>
-        </li>
+      </li>
 
       <li class="nav-item ">
         <a href="app-kanban.html" >
