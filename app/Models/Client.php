@@ -25,4 +25,14 @@ class Client extends Model
     {
         return $this->belongsTo(Person::class);
     }
+
+    /**
+     * Get all of the credits for the Client
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function credits()
+    {
+        return $this->hasMany(Credit::class);
+    }
 }
