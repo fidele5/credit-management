@@ -11,7 +11,7 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" method="post" action="{{ route('client.store') }}" novalidate>
+                            <form class="form form-vertical" method="post" action="{{ route('agent.store') }}" novalidate>
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
@@ -22,7 +22,7 @@
                                                     <input type="text" id="first-name-vertical"
                                                         class="form-control champ" name="first_name" required
                                                         data-validation-required-message="This First Name field is required"
-                                                        placeholder="Title">
+                                                        placeholder="First Name">
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -75,9 +75,9 @@
                                         <div class="row col-12 pr-0">
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="other_id">Title</label>
-                                                    <input type="email" id="contact-info-vertical" class="form-control"
-                                                        name="other_id" placeholder="Title">
+                                                    <label for="title">Title</label>
+                                                    <input type="email" id="title" class="form-control"
+                                                        name="title" placeholder="Title">
                                                 </div>
                                             </div>
 
@@ -85,11 +85,9 @@
                                                 <div class="form-group">
                                                     <label for="other_id">Agent posision</label>
                                                     <select class="select2 form-control" id="agent_position_id" name="agent_position_id">
-                                                    <option value="square">Square</option>
-                                                    <option value="rombo">Rombo</option>
-                                                    <option value="romboid">Romboid</option>
-                                                    <option value="trapeze">Trapeze</option>
-                                                    <option value="polygon">Polygon</option>
+                                                        @foreach ($positions as $position)
+                                                            <option value="{{$position->id}}">{{ $position->description }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>

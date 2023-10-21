@@ -25,7 +25,7 @@
                                                         class="form-control champ" name="first_name" required
                                                         data-validation-required-message="This First Name field is required"
                                                         value="{{ $agent->person->first_name }}"
-                                                        placeholder="Title">
+                                                        placeholder="First Name">
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -80,20 +80,17 @@
                                                 <div class="form-group">
                                                     <label for="other_id">Title</label>
                                                     <input type="email" id="contact-info-vertical" class="form-control" value="{{ $agent->title }}"
-                                                        name="other_id" placeholder="Title">
+                                                        name="title" placeholder="Title">
                                                 </div>
                                             </div>
 
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="other_id">Agent posision</label>
-                                                    <select class="select2 form-control" id="agent_position_id" 
-                                                        name="agent_position_id">
-                                                        <option value="square">Square</option>
-                                                        <option value="rombo">Rombo</option>
-                                                        <option value="romboid">Romboid</option>
-                                                        <option value="trapeze">Trapeze</option>
-                                                        <option value="polygon">Polygon</option>
+                                                    <select class="select2 form-control" id="agent_position_id" name="agent_position_id">
+                                                        @foreach ($positions as $position)
+                                                            <option value="{{$position->id}}" {{ ($agent->agent_position_id === $position->id) ? 'selected' : '' }} >{{ $position->description }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -102,7 +99,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <fieldset class="form-label-group">
-                                                    <textarea class="form-control champ" id="address" rows="3" name="address" placeholder="Address"></textarea>
+                                                    <textarea class="form-control champ" id="address" rows="3" name="address" placeholder="Address">{{ $agent->person->address }}</textarea>
                                                     <label for="address">Address</label>
                                                 </fieldset>
                                             </div>

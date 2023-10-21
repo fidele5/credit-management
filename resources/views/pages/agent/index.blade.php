@@ -5,7 +5,7 @@
         <!-- create invoice button-->
         <div class="invoice-create-btn mb-1">
             <a href="{{ route('agent.create') }}" class="btn btn-primary glow invoice-create" role="button" aria-pressed="true"
-            >Create New Agent</a
+            >New Agent</a
             >
         </div>
         <div class="users-list-table">
@@ -23,6 +23,7 @@
                                     <th>Place of birth</th>
                                     <th>Email</th>
                                     <th>Phone Number</th>
+                                    <th>Title</th>
                                     <th>Address</th>
                                     <th>Action</th>
                                 </tr>
@@ -31,14 +32,15 @@
                                 @foreach ($agents as $agent)
                                     <tr>
                                         <td>{{ $agent->id }}</td>
-                                        <td>{{ $agent->person->first_name . $agent->person->midlle_name . $agent->person->last_name }}</td>
+                                        <td>{{ $agent->person->first_name . ' ' . $agent->person->midlle_name . ' ' . $agent->person->last_name }}</td>
                                         <td>{{ $agent->person->date_of_birth }}</td>
                                         <td>{{ $agent->person->place_of_birth }}</td>
                                         <td>{{ $agent->person->email }}</td>
                                         <td>{{ $agent->person->phone_number }}</td>
+                                        <td>{{ $agent->title }}</td>
                                         <td>{{ $agent->person->address }}</td>
 
-                                        <td><a href="{{ route('agent.edit', $type) }}"><i
+                                        <td><a href="{{ route('agent.edit', $agent) }}"><i
                                                     class="bx bx-edit-alt"></i></a></td>
                                     </tr>
                                 @endforeach
