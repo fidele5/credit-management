@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\AgentPosition;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class AgentPositionController extends Controller
 {
@@ -13,8 +12,7 @@ class AgentPositionController extends Controller
      */
     public function index()
     {
-        $agent_positions = AgentPosition::get();
-        return view('pages.agent-position.index')->with(compact('agent_positions'));
+        //
     }
 
     /**
@@ -22,7 +20,7 @@ class AgentPositionController extends Controller
      */
     public function create()
     {
-        return view('pages.agent-position.create');
+        //
     }
 
     /**
@@ -30,17 +28,7 @@ class AgentPositionController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = Validator::make($request->except('_token'), [
-            'description' => 'required'
-        ]);
-        if (!$validation->fails()){
-           $agent_position = new AgentPosition();
-           $agent_position->description = $request->description;
-           $agent_position->save();
-           return response()->json('success');
-        }
-
-        return response()->json('error', $validation->errors());
+        //
     }
 
     /**
@@ -56,7 +44,7 @@ class AgentPositionController extends Controller
      */
     public function edit(AgentPosition $agentPosition)
     {
-        return view('pages.agent-position.edit')->with(compact('agentPosition'));
+        //
     }
 
     /**
@@ -64,16 +52,7 @@ class AgentPositionController extends Controller
      */
     public function update(Request $request, AgentPosition $agentPosition)
     {
-        $validation = Validator::make($request->except('_token'), [
-            'description' => 'required'
-        ]);
-        if (!$validation->fails()){
-            $agentPosition->description = $request->description;
-            $agentPosition->save();
-            return response()->json('success');
-        }
-
-        return response()->json('error', $validation->errors());
+        //
     }
 
     /**
