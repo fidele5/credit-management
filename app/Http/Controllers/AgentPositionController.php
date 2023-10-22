@@ -37,7 +37,10 @@ class AgentPositionController extends Controller
            $agent_position = new AgentPosition();
            $agent_position->description = $request->description;
            $agent_position->save();
-           return response()->json('success');
+           return response()->json([
+               'status' => 'success',
+               'back' => 'agent-position'
+           ]);
         }
 
         return response()->json('error', $validation->errors());
@@ -70,7 +73,10 @@ class AgentPositionController extends Controller
         if (!$validation->fails()){
             $agentPosition->description = $request->description;
             $agentPosition->save();
-            return response()->json('success');
+            return response()->json([
+                'status' => 'success',
+                'back' => 'agent-position'
+            ]);
         }
 
         return response()->json('error', $validation->errors());

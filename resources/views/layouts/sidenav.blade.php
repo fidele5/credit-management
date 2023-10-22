@@ -48,9 +48,16 @@
           <span class="menu-title">Client</span>
         </a>
       </li>
-      
+
       <li class="navigation-header"><span>Agent</span></li>
       <li class="nav-item ">
+        <li class="nav-item ">
+            <a href="{{ route('agent.index') }}" >
+                <i class="bx bx-user"></i>
+                <span class="menu-title">Agent</span>
+            </a>
+        </li>
+        <li class="nav-item ">
             <a href="{{ route('agent-position.index') }}" >
                 <i class="bx bxs-user-badge"></i>
                 <span class="menu-title">Agent Position</span>

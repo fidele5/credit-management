@@ -130,8 +130,9 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        $client->person->delete();
+        $person = Person::find($client->person_id);
         $client->delete();
+        $person->delete();
         return response()->json([
             'status' => 'success'
         ]);
