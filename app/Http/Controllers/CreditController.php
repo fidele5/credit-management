@@ -85,7 +85,7 @@ class CreditController extends Controller
      */
     public function show(Credit $credit)
     {
-        return $credit;
+        return view('pages.credit.show')->with('credit', $credit);
     }
 
     /**

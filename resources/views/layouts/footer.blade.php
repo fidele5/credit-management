@@ -46,6 +46,7 @@
     <script src="/vendors/js/pickers/daterange/moment.min.js"></script>
     <script src="/vendors/js/pickers/daterange/daterangepicker.js"></script>
     <script src="/vendors/js/forms/select/select2.full.min.js"></script>
+    <script src="/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -64,6 +65,7 @@
     <script src="/js/scripts/pages/page-users.js"></script>
     <script src="/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>  
     <script src="/js/scripts/forms/select/form-select2.js"></script>
+    <script src="/js/scripts/forms/form-repeater.js"></script>
     <!-- END: Page JS-->
 
     <script src="/js/ajax/form.js"></script>
