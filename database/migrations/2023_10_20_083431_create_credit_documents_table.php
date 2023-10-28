@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('credit_id');
             $table->string('document_name');
             $table->string('file_path');
+            $table->boolean('status')->default(false);
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('deleted_by');
             $table->timestamps();

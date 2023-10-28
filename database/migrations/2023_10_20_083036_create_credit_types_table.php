@@ -17,8 +17,11 @@ return new class extends Migration
             $table->text('description');
             $table->double('amount_range_start');
             $table->double('amount_range_end');
+            $table->integer('duration');
+            $table->string('duration_unit');
             $table->string('allowed_documents');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

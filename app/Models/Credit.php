@@ -17,6 +17,8 @@ class Credit extends Model
         'start_date',
         'end_date',
         'status',
+        'duration',
+        'duration_unit',
         'accepted_by',
         'created_by',
         'accepted_at',
@@ -50,5 +52,15 @@ class Credit extends Model
     public function documents()
     {
         return $this->hasMany(CreditDocument::class);
+    }
+
+    /**
+     * Get the user that owns the Credit
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'accepted_by', 'id');
     }
 }

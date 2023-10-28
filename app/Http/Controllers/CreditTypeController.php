@@ -30,31 +30,50 @@ class CreditTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->except('_token'),[
+        $validator = Validator::make($request->except('_token'), [
             'title' => 'required',
             'description' => 'required',
             'amount_range_start' => 'required|numeric',
             'amount_range_end' => 'required|numeric',
-            'allowed_documents' => 'required'
+            'allowed_documents' => 'required',
+            'duration' => 'required|numeric',
+            'duration_unit' => 'required',
         ]);
 
-        if(!$validator->fails()){
+        if (!$validator->fails()) {
             $creditType = new CreditType();
             $creditType->title = $request->title;
             $creditType->description = $request->description;
             $creditType->amount_range_start = $request->amount_range_start;
             $creditType->amount_range_end = $request->amount_range_end;
+            $duration = 0;
+
+            switch ($request->duration_unit) {
+                case 'month':
+                    $duration = $request->duration * 28;
+                    break;
+                case 'year':
+                    $duration = $request->duration * 12 * 28;
+                    break;
+
+                default:
+                    $duration = $request->duration;
+                    break;
+            }
+
+            $creditType->duration = $duration;
+            $creditType->duration_unit = $request->duration_unit;
             $creditType->allowed_documents = $request->allowed_documents;
-            $creditType->save();  
+            $creditType->save();
 
             return response()->json([
                 'status' => 'success',
-                'back' => 'credit-type'
+                'back' => 'credit-type',
             ]);
         }
 
         return response()->json([
-            'errors' => $validator->errors()
+            'errors' => $validator->errors(),
         ], 403);
     }
 
@@ -79,30 +98,49 @@ class CreditTypeController extends Controller
      */
     public function update(Request $request, CreditType $creditType)
     {
-        $validator = Validator::make($request->except('_token'),[
+        $validator = Validator::make($request->except('_token'), [
             'title' => 'required',
             'description' => 'required',
             'amount_range_start' => 'required|numeric',
             'amount_range_end' => 'required|numeric',
-            'allowed_documents' => 'required'
+            'allowed_documents' => 'required',
+            'duration' => 'required|numeric',
+            'duration_unit' => 'required',
         ]);
 
-        if(!$validator->fails()){
+        if (!$validator->fails()) {
             $creditType->title = $request->title;
             $creditType->description = $request->description;
             $creditType->amount_range_start = $request->amount_range_start;
             $creditType->amount_range_end = $request->amount_range_end;
+            $duration = 0;
+
+            switch ($request->duration_unit) {
+                case 'month':
+                    $duration = $request->duration * 28;
+                    break;
+                case 'year':
+                    $duration = $request->duration * 12 * 28;
+                    break;
+
+                default:
+                    $duration = $request->duration;
+                    break;
+            }
+
+            $creditType->duration = $duration;
+            $creditType->duration_unit = $request->duration_unit;
             $creditType->allowed_documents = $request->allowed_documents;
-            $creditType->save();  
+            $creditType->save();
 
             return response()->json([
                 'status' => 'success',
-                'back' => '../credit-type'
+                'back' => '../credit-type',
             ]);
         }
 
         return response()->json([
-            'errors' => $validator->errors()
+            'errors' => $validator->errors(),
         ], 403);
     }
 
@@ -111,6 +149,10 @@ class CreditTypeController extends Controller
      */
     public function destroy(CreditType $creditType)
     {
-        //
+        $creditType->delete();
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 }

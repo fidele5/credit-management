@@ -7,46 +7,49 @@
             <div class="col-md-6 col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">New credit type</h4>
+                        <h4 class="card-title">New Credit</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" method="post" action="{{ route('credit-type.store') }}"
-                                novalidate>
+                            <form class="form form-vertical" method="post" action="{{ route('credit.store') }}">
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="first-name-vertical">Title</label>
-                                                <input type="text" id="first-name-vertical champ" class="form-control"
-                                                    name="title" required
-                                                    data-validation-required-message="This First Name field is required"
-                                                    placeholder="Title">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="description">Description</label>
-                                                <input type="text" id="description" class="form-control champ"
-                                                    name="description" placeholder="Description">
+                                                <label for="description">Client</label>
+                                                <select class="form-control select2" id="basicSelect" name="client_id">
+                                                    @foreach ($clients as $client)
+                                                        <option value="{{ $client->id }}">{{ $client->person->first_name }} {{ $client->person->last_name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Amount range start</label>
-                                                <input type="number" id="contact-info-vertical" class="form-control champ"
-                                                    name="amount_range_start" placeholder="Amount range start">
+                                                <label for="description">Credit type</label>
+                                                <select class="form-control select2" name="credit_type_id">
+                                                    @foreach ($creditTypes as $creditType)
+                                                        <option value="{{ $creditType->id }}">{{ $creditType->title }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
-
+                                        
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="contact-info-vertical">Amount range end</label>
-                                                <input type="number" id="contact-info-vertical" class="form-control champ"
-                                                    name="amount_range_end" placeholder="Amount range end">
+                                                <label for="amount">Amount</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">$</span>
+                                                    </div>
+                                                    <input type="number" id="amount" class="form-control"
+                                                        name="amount" placeholder="Amount">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">.00</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -57,7 +60,7 @@
                                                     <input type="number" class="form-control" placeholder="Duration"
                                                         name="duration" aria-describedby="basic-addon1">
                                                     <div class="input-group-append">
-                                                        <select class="form-control select2" id="basicSelect"
+                                                        <select class="form-control"
                                                             name="duration_unit">
                                                             <option value="days">Days</option>
                                                             <option value="month">Month</option>
@@ -65,16 +68,6 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <fieldset class="form-label-group">
-                                                    <textarea class="form-control champ" id="label-textarea" rows="3" name="allowed_documents"
-                                                        placeholder="Allowed documents"></textarea>
-                                                    <label for="label-textarea">Allowed documents</label>
-                                                </fieldset>
                                             </div>
                                         </div>
 

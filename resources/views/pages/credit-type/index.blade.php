@@ -22,6 +22,7 @@
                     <th>Description</th>
                     <th>Amount range start</th>
                     <th>Amount range end</th>
+                    <th>Duration</th>
                     <th>Allowed documents</th>
                     <th>Action</th>
                 </tr>
@@ -34,6 +35,7 @@
                     <td>{{ $type->description }}</td>
                     <td>{{ $type->amount_range_start }}</td>
                     <td>{{ $type->amount_range_end }}</td>
+                    <td>{{ $type->duration }} days</td>
                     <td>{{ $type->allowed_documents }}</td>
                     <td><a href="{{ route('credit-type.edit', $type) }}"><i
                                 class="bx bx-edit-alt"></i></a></td>

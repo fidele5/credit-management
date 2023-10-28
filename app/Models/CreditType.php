@@ -15,7 +15,9 @@ class CreditType extends Model
         'description',
         'amount_range_start',
         'amount_range_end',
-        'allowed_documents'
+        'allowed_documents',
+        'duration',
+        'duration_unit'
     ];
 
     /**

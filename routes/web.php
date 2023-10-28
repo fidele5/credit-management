@@ -6,6 +6,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CreditController;
 use App\Http\Controllers\CreditTypeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,13 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('credit/folder/document/{id}/download', [CreditController::class, 'downloadDocument'])->name('credit.document.download');
+    Route::get('credit/folder/document/{id}/accept', [CreditController::class, 'acceptDocument'])->name('credit.document.accept');
+    Route::get('credit/folder/document/{id}/destroy', [CreditController::class, 'destroyDocument'])->name('credit.document.destroy');
+    Route::get('credit/{id}/folder', [CreditController::class, 'folder'])->name('credit.folder');
+    Route::patch('credit/{id}/folder', [CreditController::class, 'addFiles'])->name('credit.folder.store');
+    Route::patch('credit/{id}/accept', [CreditController::class, 'acceptCredit'])->name('credit.accept');
+    Route::get('credit/{id}/archive', [CreditController::class, 'zipFolder'])->name('credit.archive');
     Route::resource('credit', CreditController::class);
     Route::resource('credit-type', CreditTypeController::class);
     Route::resource('agent-position', AgentPositionController::class);
