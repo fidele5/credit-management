@@ -27,7 +27,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('credit/{id}/folder', [CreditController::class, 'folder'])->name('credit.folder');
-    Route::patch('credit/{id}/folder', [CreditController::class, 'addFiles']);
+    Route::patch('credit/{id}/folder', [CreditController::class, 'addFiles'])->name('credit.folder.store');
     Route::resource('credit', CreditController::class);
     Route::resource('credit-type', CreditTypeController::class);
     Route::resource('agent-position', AgentPositionController::class);
