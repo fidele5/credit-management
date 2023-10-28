@@ -17,6 +17,8 @@ class Credit extends Model
         'start_date',
         'end_date',
         'status',
+        'duration',
+        'duration_unit',
         'accepted_by',
         'created_by',
         'accepted_at',
