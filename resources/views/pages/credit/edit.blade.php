@@ -21,28 +21,44 @@
                                                 <label for="description">Client</label>
                                                 <select class="form-control select2" name="client_id">
                                                     @foreach ($clients as $client)
-                                                        <option value="{{ $client->id }}" {{ ($credit->client_id === $client->id) ? 'selected' : '' }}>{{ $client->person->first_name }} {{ $client->person->last_name }}</option>
+                                                        <option value="{{ $client->id }}"
+                                                            {{ $credit->client_id === $client->id ? 'selected' : '' }}>
+                                                            {{ $client->person->first_name }}
+                                                            {{ $client->person->last_name }}
+                                                        </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="description">Credit type</label>
-                                                <select class="form-control" name="credit_type_id">
+                                                <select class="form-control select2" name="credit_type_id">
                                                     @foreach ($creditTypes as $creditType)
-                                                        <option value="{{ $creditType->id }}" {{ ($credit->credit_type_id === $creditType->id) ? 'selected' : '' }} >{{ $creditType->title }}</option>
+                                                        <option value="{{ $creditType->id }}"
+                                                            {{ $credit->credit_type_id === $creditType->id ? 'selected' : '' }}
+                                                        >
+                                                            {{ $creditType->title }}
+                                                        </option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="amount">Amount</label>
-                                                <input type="number" id="amount" class="form-control" value="{{ $credit->amount }}"
-                                                    name="amount" placeholder="Amount">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">$</span>
+                                                    </div>
+                                                    <input type="number" id="amount" class="form-control"
+                                                        value="{{ $credit->amount }}" name="amount" placeholder="Amount">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">.00</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -50,10 +66,11 @@
                                             <div class="form-group">
                                                 <label for="other_id">Duration</label>
                                                 <div class="input-group">
-                                                    <input type="number" class="form-control" placeholder="Duration" value="{{ $credit->duration }}"
-                                                        name="duration" aria-describedby="basic-addon1">
+                                                    <input type="number" class="form-control" placeholder="Duration"
+                                                        value="{{ $credit->duration }}" name="duration"
+                                                        aria-describedby="basic-addon1">
                                                     <div class="input-group-append">
-                                                        <select class="form-control select2" name="duration_unit">
+                                                        <select class="form-control" name="duration_unit">
                                                             <option value="days">Days</option>
                                                             <option value="month">Month</option>
                                                             <option value="years">Years</option>

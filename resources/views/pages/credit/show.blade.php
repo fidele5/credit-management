@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-6">
                             <h6><small class="text-muted">Amount</small></h6>
-                            <p>{{ $credit->amount }}</p>
+                            <p>${{ $credit->amount }}</p>
                         </div>
                         <div class="col-6">
                             <h6><small class="text-muted">Duration</small></h6>
@@ -28,13 +28,13 @@
                         </div>
                         <div class="col-6">
                             <h6><small class="text-muted">Start Date</small></h6>
-                            <p>{{ $credit->start_date }}</p>
+                            <p>{{ !is_null($credit->start_date) ? $credit->start_date : ' - ' }}</p>
                         </div>
                         <div class="col-6">
                             <h6><small class="text-muted">End Date </small></h6>
-                            <p>{{ $credit->end_date }}</p>
+                            <p>{{ !is_null($credit->end_date) ? $credit->end_date : ' - ' }}</p>
                         </div>
-                        <div class="col-12">
+                        <div class="col-6">
                             <h6><small class="text-muted">Status</small></h6>
                             <p>
                                 @if ($credit->status === 2)
@@ -53,9 +53,13 @@
                             </p>
                         </div>
                         <div class="col-6">
+                            <h6><small class="text-muted">Accepted by</small></h6>
+                            <p>{{ !is_null($credit->accepted_by) ? $credit->user->person->first_name." ".$credit->user->last_name : ' - ' }}</p>
+                        </div>
+                        <div class="col-6">
                             <div class="card-body px-0 py-1">
                                 <ul class="widget-todo-list-wrapper" id="widget-todo-list">
-                                    @foreach ($credit->documents as $document)    
+                                    @foreach ($credit->documents as $document)
                                         <li class="widget-todo-item">
                                             <div
                                                 class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
@@ -64,13 +68,15 @@
                                                 </div>
                                                 <div class="widget-todo-item-action d-flex align-items-center">
                                                     @if ($credit->status === 2)
-                                                        <div class="badge badge-pill badge-light-success mr-1">Accepted</div>
+                                                        <div class="badge badge-pill badge-light-success mr-1">Accepted
+                                                        </div>
                                                     @elseif ($credit->status === 1)
-                                                        <div class="badge badge-pill badge-light-success mr-1">Checking</div>
+                                                        <div class="badge badge-pill badge-light-success mr-1">Checking
+                                                        </div>
                                                     @else
                                                         <div class="badge badge-pill badge-light-success mr-1">Pending</div>
                                                     @endif
-                                                    
+
                                                 </div>
                                             </div>
                                         </li>
@@ -79,11 +85,11 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-sm d-none d-sm-block float-right btn-light-primary mb-2">
-                        <i class="cursor-pointer bx bx-edit font-small-3 mr-50"></i><span>Edit</span>
-                    </button>
-                    <button class="btn btn-sm d-block d-sm-none btn-block text-center btn-light-primary">
-                        <i class="cursor-pointer bx bx-edit font-small-3 mr-25"></i><span>Edit</span></button>
+                    
+                    <a class="btn btn-sm d-block btn-block text-center btn-light-primary" href="{{ route('credit.edit', $credit) }}">
+                        <i class="cursor-pointer bx bx-edit font-small-3 mr-25"></i>
+                        <span>Edit</span>
+                    </a>
                 </div>
             </div>
         </div>

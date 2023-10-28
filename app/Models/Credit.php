@@ -51,4 +51,14 @@ class Credit extends Model
     {
         return $this->hasMany(CreditDocument::class);
     }
+
+    /**
+     * Get the user that owns the Credit
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'accepted_by', 'id');
+    }
 }

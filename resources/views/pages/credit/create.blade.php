@@ -29,7 +29,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="description">Credit type</label>
-                                                <select class="form-control" id="basicSelect" name="credit_type_id">
+                                                <select class="form-control select2" name="credit_type_id">
                                                     @foreach ($creditTypes as $creditType)
                                                         <option value="{{ $creditType->id }}">{{ $creditType->title }}</option>
                                                     @endforeach
@@ -40,8 +40,16 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="amount">Amount</label>
-                                                <input type="number" id="amount" class="form-control"
-                                                    name="amount" placeholder="Amount">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">$</span>
+                                                    </div>
+                                                    <input type="number" id="amount" class="form-control"
+                                                        name="amount" placeholder="Amount">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">.00</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -52,7 +60,7 @@
                                                     <input type="number" class="form-control" placeholder="Duration"
                                                         name="duration" aria-describedby="basic-addon1">
                                                     <div class="input-group-append">
-                                                        <select class="form-control select2" id="basicSelect"
+                                                        <select class="form-control"
                                                             name="duration_unit">
                                                             <option value="days">Days</option>
                                                             <option value="month">Month</option>
