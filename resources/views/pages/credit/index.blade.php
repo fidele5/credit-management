@@ -69,8 +69,8 @@
                                     <a href="{{ route('credit.destroy', $credit) }}" class="invoice-action-edit cursor-pointer delete mr-1">
                                         <i class="bx bx-trash"></i>
                                     </a>
-                                    <a href="{{ route('credit.edit', $credit) }}" class="invoice-action-edit cursor-pointer">
-                                        <i class="bx bx-spreadsheet"></i>
+                                    <a href="{{ route('credit.folder', $credit) }}" class="invoice-action-edit cursor-pointer">
+                                        <i class="bx bx-folder"></i>
                                     </a>
                                 </div>
                             </td>

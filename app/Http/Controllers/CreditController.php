@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Credit;
 use App\Models\CreditType;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
@@ -29,6 +30,12 @@ class CreditController extends Controller
         $creditTypes = CreditType::get();
 
         return view('pages.credit.create')->with(compact('clients', 'creditTypes'));
+    }
+
+    public function folder($id)
+    {
+        $credit = Credit::find($id);
+        return view("pages.credit.folder")->with(compact('credit'));
     }
 
     /**
@@ -147,6 +154,10 @@ class CreditController extends Controller
         return response()->json([
             'errors' => $validator->errors()
         ], Response::HTTP_FORBIDDEN);
+    }
+
+    public function addFIles(Credit $credit, Request $request) : JsonResponse{
+        return response()->json($credit);
     }
 
     /**
