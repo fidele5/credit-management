@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('credit_type_id');
             $table->double('amount');
             $table->integer('duration');
+            $table->string('duration_unit');
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->boolean('status')->default(0);

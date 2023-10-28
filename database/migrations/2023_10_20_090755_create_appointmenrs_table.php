@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
-            $table->text('object');
-            $table->boolean('status');
+            $table->text('object')->nullable();
+            $table->boolean('status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
