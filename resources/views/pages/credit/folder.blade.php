@@ -9,21 +9,21 @@
                         <div class="col-12">
                             <h6 class="py-50">Id Proof</h6>
                         </div>
-                        <form action="{{ route('credit.folder.store', $credit) }}" method="POST">
+                        <form action="{{ route('credit.folder.store', $credit) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="row">
                                 <div class="col-12 form-group file-repeater">
-                                    <div data-repeater-list="repeater-list">
+                                    <div data-repeater-list="repeater_list">
                                         <div data-repeater-item="">
                                             <div class="row mb-2">
                                                 <div class="col-md-4 col-sm-12 form-group">
-                                                    <input type="text" class="form-control champ" placeholder="Name">
+                                                    <input type="text" class="form-control champ" name="document_name" placeholder="Name">
                                                 </div>
 
                                                 <div class="col-6 col-lg-6 mb-1">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input champ" id="inputGroupFile01">
+                                                        <input type="file" class="custom-file-input champ" name="file" id="inputGroupFile01">
                                                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                                     </div>
                                                 </div>

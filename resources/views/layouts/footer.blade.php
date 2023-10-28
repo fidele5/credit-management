@@ -66,6 +66,7 @@
     <script src="/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>  
     <script src="/js/scripts/forms/select/form-select2.js"></script>
     <script src="/js/scripts/forms/form-repeater.js"></script>
+    <script src="/js/scripts/popover/popover.js"></script>
     <!-- END: Page JS-->
 
     <script src="/js/ajax/form.js"></script>
