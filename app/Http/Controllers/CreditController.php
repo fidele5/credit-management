@@ -66,6 +66,7 @@ class CreditController extends Controller
             }
 
             $credit->duration = $duration;
+            $credit->duration_unit = $request->duration_unit;
             $credit->status = 0;
             $credit->save();
 
@@ -133,6 +134,7 @@ class CreditController extends Controller
             }
 
             $credit->duration = $duration;
+            $credit->duration_unit = $request->duration_unit;
             $credit->status = 0;
             $credit->save();
 
