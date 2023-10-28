@@ -123,7 +123,7 @@ class CreditController extends Controller
                 case 'month':
                     $duration  = $request->duration * 28;
                     break;
-                case 'years': 
+                case 'year': 
                     $duration = $request->duration * 12 * 28;
                     break;
                 

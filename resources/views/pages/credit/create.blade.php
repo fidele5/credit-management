@@ -64,7 +64,7 @@
                                                             name="duration_unit">
                                                             <option value="days">Days</option>
                                                             <option value="month">Month</option>
-                                                            <option value="years">Years</option>
+                                                            <option value="year">Years</option>
                                                         </select>
                                                     </div>
                                                 </div>

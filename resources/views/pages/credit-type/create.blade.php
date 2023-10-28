@@ -60,8 +60,8 @@
                                                         <select class="form-control select2" id="basicSelect"
                                                             name="duration_unit">
                                                             <option value="days">Days</option>
-                                                            <option value="days">Month</option>
-                                                            <option value="days">Years</option>
+                                                            <option value="month">Month</option>
+                                                            <option value="year">Years</option>
                                                         </select>
                                                     </div>
                                                 </div>

@@ -46,6 +46,23 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group">
+                        <label for="other_id">Duration</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Duration"
+                                name="duration" aria-describedby="basic-addon1" value="{{ $creditType->duration }}">
+                            <div class="input-group-append">
+                                <select class="form-control select2" id="basicSelect"
+                                    name="duration_unit">
+                                    <option value="days" {{ $creditType->duration === 'days' ? 'selected' : '' }}>Days</option>
+                                    <option value="month" {{ $creditType->duration === 'month' ? 'selected' : '' }}>Month</option>
+                                    <option value="year" {{ $creditType->duration === 'years' ? 'selected' : '' }}>Years</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-12">
+                    <div class="form-group">
                         <fieldset class="form-label-group">
                               <textarea class="form-control champ" id="label-textarea" rows="3" name="allowed_documents" placeholder="Allowed documents" required
                               data-validation-required-message="Veuillez completer les documents requis">{{ $creditType->allowed_documents }}</textarea>
