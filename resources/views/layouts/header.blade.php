@@ -28,6 +28,10 @@
         <link rel="stylesheet" type="text/css" href="/vendors/css/pickers/pickadate/pickadate.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/pickers/daterange/daterangepicker.css">
         <link rel="stylesheet" type="text/css" href="/vendors/css/forms/select/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/calendars/tui-time-picker.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/calendars/tui-date-picker.css">
+        <link rel="stylesheet" type="text/css" href="/vendors/css/calendars/tui-calendar.min.css">
+            <!-- END: Vendor CSS-->
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -51,6 +55,7 @@
     <!-- END: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="/css/pages/page-users.css">
     <link rel="stylesheet" type="text/css" href="/css/plugins/forms/validation/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="/css/plugins/calendars/app-calendar.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->

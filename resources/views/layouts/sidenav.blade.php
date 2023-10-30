@@ -65,9 +65,9 @@
       </li>
 
       <li class="nav-item ">
-        <a href="app-kanban.html" >
-          <i class="bx bx-grid-alt"></i>
-          <span class="menu-title">Kanban</span>
+        <a href="{{ route('appointment.index') }}" >
+          <i class="bx bx-calendar-event"></i>
+          <span class="menu-title">Appointment</span>
         </a>
       </li>
 

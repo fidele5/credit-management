@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\AgentPositionController;
+use App\Http\Controllers\AppointmenrController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CreditController;
 use App\Http\Controllers\CreditTypeController;
@@ -39,4 +40,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('agent-position', AgentPositionController::class);
     Route::resource('agent', AgentController::class);
     Route::resource('client', ClientController::class);
+    Route::resource('appointment', AppointmenrController::class);
 });

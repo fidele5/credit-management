@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointmenr;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 
 class AppointmenrController extends Controller
@@ -12,7 +13,8 @@ class AppointmenrController extends Controller
      */
     public function index()
     {
-        //
+        $appointments = Appointment::where('agent_id', 1)->get();
+        return view('pages.appointments.index')->with('appointments', $appointments);
     }
 
     /**
