@@ -76,7 +76,7 @@
     <script src="/js/scripts/popover/popover.js"></script>
     <script src="/js/scripts/extensions/calendar/calendars-data.js"></script>
     <script src="/js/scripts/extensions/calendar/schedules.js"></script>
-    <script src="/js/scripts/extensions/calendar/app-calendar.js"></script>
+
     <!-- END: Page JS-->
 
     <script src="/js/ajax/form.js"></script>
