@@ -109,6 +109,10 @@
                         <i class="cursor-pointer bx bx-edit font-small-3 mr-25"></i>
                         <span>Edit</span>
                     </a>
+                    <a href="{{ route('credit.folder', $credit) }}" class="btn btn-sm text-center btn-light">
+                        <i class="cursor-pointer bx bx-file font-small-3 mr-25"></i>
+                        <span>Add files</span>
+                    </a>
                     @if (count($credit->documents))
                         @if ($ready)
                             <a class="btn btn-sm text-center btn-light-success" data-toggle="modal" data-target="#inlineForm">

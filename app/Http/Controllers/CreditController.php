@@ -214,7 +214,10 @@ class CreditController extends Controller
         }
         $document->save();
 
-        return back();
+        return response()->json([
+            'status' => 'success',
+            'back' => '',
+        ]);
     }
 
     public function destroyDocument($id)
