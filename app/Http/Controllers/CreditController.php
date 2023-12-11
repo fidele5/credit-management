@@ -52,8 +52,6 @@ class CreditController extends Controller
             'client_id' => 'required|numeric',
             'credit_type_id' => 'required|numeric',
             'amount' => 'required|numeric',
-            'duration' => 'required|numeric',
-            'duration_unit' => 'required',
         ]);
 
         if (!$validator->fails()) {
@@ -129,8 +127,6 @@ class CreditController extends Controller
             'client_id' => 'required|numeric',
             'credit_type_id' => 'required|numeric',
             'amount' => 'required|numeric',
-            'duration' => 'required|numeric',
-            'duration_unit' => 'required',
         ]);
 
         if (!$validator->fails()) {

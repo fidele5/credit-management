@@ -53,24 +53,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="other_id">Duration</label>
-                                                <div class="input-group">
-                                                    <input type="number" class="form-control" placeholder="Duration"
-                                                        name="duration" aria-describedby="basic-addon1">
-                                                    <div class="input-group-append">
-                                                        <select class="form-control"
-                                                            name="duration_unit">
-                                                            <option value="days">Days</option>
-                                                            <option value="month">Month</option>
-                                                            <option value="year">Years</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>
                                             <button type="reset" class="btn btn-light-secondary mr-1 mb-1">Reset</button>

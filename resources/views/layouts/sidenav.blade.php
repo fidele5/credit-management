@@ -21,8 +21,7 @@
       <li class="nav-item ">
         <a href="{{ route('home') }}" >
           <i class="bx bx-home-alt"></i>
-          <span class="menu-title">painel de controle</span>
-          <span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span>
+          <span class="menu-title">Acceuil</span>
         </a>
 
       </li>
@@ -37,7 +36,7 @@
       <li>
       <a href="{{ route('credit-type.index') }}" >
           <i class="bx bxs-spreadsheet"></i>
-          <span class="menu-title">Credits type</span>
+          <span class="menu-title">Type de credit</span>
         </a>
       </li>
 
@@ -67,29 +66,7 @@
       <li class="nav-item ">
         <a href="{{ route('appointment.index') }}" >
           <i class="bx bx-calendar-event"></i>
-          <span class="menu-title">Appointment</span>
-        </a>
-      </li>
-
-
-      <li class="nav-item ">
-        <a href="# " >
-          <i class="bx bx-unlink"></i>
-          <span class="menu-title">Menu desativado</span>
-        </a>
-      </li>
-
-      <li class="navigation-header"><span>Support</span></li>
-      <li class="nav-item ">
-        <a href="https://pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/documentation" target=_blank>
-          <i class="bx bx-folder"></i>
-          <span class="menu-title">Documentação</span>
-        </a>
-      </li>
-      <li class="nav-item ">
-        <a href="https://pixinvent.ticksy.com/" target=_blank>
-          <i class="bx bx-purchase-tag-alt"></i>
-          <span class="menu-title">Levantar suporte</span>
+          <span class="menu-title">Rendez-vous</span>
         </a>
       </li>
     </ul>
